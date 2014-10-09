@@ -1,1 +1,12 @@
 // Use this document to record your answer to the question found in the student guide, pg. 4
+
+Question 1
+
+When presented with a sentence that contains more than one keyword that you selected to provide a unique response,
+the response will be whichever one comes first in your code. For example, if you checked for the keyword, "cheese"
+before checking for the keyword, "baseball", the response would be the one you set up for the keyword "cheese".
+
+Here is the example from my code:
+
+Me: I like baseball and cheese.
+Computer: What kind of cheese do you like?
