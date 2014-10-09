@@ -1,1 +1,10 @@
 // Use this document to record your answer to the question found in the student guide, pg. 4
+
+You would put the response you want the computer to answer first at the top of the if-else statement and put the least useful ones at the bottom. Preferably, you would put the 'no' keyword last as it's unlikely that a statement would require the computer to give the specific response attributed to the 'no' keyword.
+
+1) The problem with these questions is that the computer will look for the intstance in the entire string of the those specific characters in their specific order and give out the response, despite the characters being in another word. So, the computer will give a response that the user did not want or intended. 
+
+
+
+
+
