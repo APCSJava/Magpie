@@ -1,1 +1,2 @@
 // Use this document to record your answer to the question found in the student guide, pg. 4
+// You do not need to answer the question above where pg. 4 begins the “Question” section.
