@@ -30,7 +30,7 @@ public class Magpie3
 	public String getResponse(String statement)
 	{
 		String response = "";
-		if (statement.length() == 0)
+		if (statement.trim().length() == 0)
 		{
 			response = "Say something, please.";
 		}
@@ -44,6 +44,27 @@ public class Magpie3
 				|| findKeyword(statement, "brother") >= 0)
 		{
 			response = "Tell me more about your family.";
+		}
+		//Additional Modifications from activity 2
+		else if ((findKeyword(statement, "cat") >= 0) || (findKeyword(statement, "dog") >= 0))
+		{
+		response = "Tell me more about your pets";
+		}
+		else if (findKeyword(statement, "Mr. Collins") >= 0)
+		{
+		response = "He sounds like a great teacher";
+		}
+		else if (findKeyword(statement, "bike") >= 0 ) 
+		{
+		response = "Cycliing is fun and relaxing, tell me more";
+		}
+		else if (findKeyword(statement, "mountain") >= 0 )
+		{
+		response = "Tell me more about the mountains";
+		}
+		else if (findKeyword(statement, "bug") >= 0) 
+		{
+		response = "Tell me more about the bugs";
 		}
 		else
 		{
@@ -144,7 +165,7 @@ public class Magpie3
 	 */
 	private String getRandomResponse()
 	{
-		final int NUMBER_OF_RESPONSES = 4;
+		final int NUMBER_OF_RESPONSES = 6;
 		double r = Math.random();
 		int whichResponse = (int) (r * NUMBER_OF_RESPONSES);
 		String response = "";
@@ -165,7 +186,15 @@ public class Magpie3
 		{
 			response = "You don't say.";
 		}
-
+		//Added two extra random statements
+		else if (whichResponse == 4) 
+		{
+		response = "Is that so?";
+		}
+		else if (whichResponse == 5)
+		{
+		response = "Golly";
+		}
 		return response;
 	}
 
