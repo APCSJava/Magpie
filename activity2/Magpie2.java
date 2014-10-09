@@ -18,7 +18,7 @@ public class Magpie2
 	 */
 	public String getGreeting()
 	{
-		return "Hello, let's talk.";
+		return "Hello, let's talk. Also, as per the study guide, this program prioritizes its responses by the keywords: 'no''brother''mother'father''sister'dog''cat'Mr. Collins''party''ocean'and 'death', so whatever keyword comes first, the corresponding response will appear";
 	}
 	
 	/**
@@ -31,10 +31,20 @@ public class Magpie2
 	public String getResponse(String statement)
 	{
 		String response = "";
+		
+		if(statement.trim().length()==0)
+		{
+			response = "Please say something";
+		}
 		if (statement.indexOf("no") >= 0)
 		{
 			response = "Why so negative?";
 		}
+		else if(statement.indexOf("brother") >= 0)
+                {
+                        response = "I wish I had a brother.";
+                }
+
 		else if (statement.indexOf("mother") >= 0
 				|| statement.indexOf("father") >= 0
 				|| statement.indexOf("sister") >= 0
@@ -42,6 +52,29 @@ public class Magpie2
 		{
 			response = "Tell me more about your family.";
 		}
+		else if(statement.indexOf("dog") >= 0
+			|| statement.indexOf("cat") >=0)
+		{
+			response = "I have many cats. Meow.";
+		}
+		
+		else if(statement.indexOf("Mr. Collins") >= 0)
+                {
+                        response = "Sounds like a pretty chill guy.";
+                }
+		else if(statement.indexOf("party") >= 0)
+                {
+                        response = "Sounds nice.";
+                }
+		else if(statement.indexOf("ocean") >= 0)
+                {
+                        response = "I always loved the sea breeze.";
+                }
+		else if(statement.indexOf("death") >= 0)
+                {
+                        response = "Let's change the subject.";
+                }
+
 		else
 		{
 			response = getRandomResponse();

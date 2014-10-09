@@ -1,1 +1,1 @@
-// Use this document to record your answer to the question found in the student guide, pg. 4
+When a keyword is included in another word, the response to the keyword is still revealed, such as in the string “I know all the state capitals”, as the “no” in “know” will be counted. It is also the same in the statement “I like vegetables smothered in cheese,”, which includes “mother” in “smothered”, and therefore it will print the response to mother, regardless if that is the meaning or not.

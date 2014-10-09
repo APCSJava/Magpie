@@ -17,7 +17,7 @@ public class Magpie3
 	 */
 	public String getGreeting()
 	{
-		return "Hello, let's talk.";
+		return "Hello, let's talk. For the record, this program does take into account that keywords may be nested inside other words, and take care of that.";
 	}
 
 	/**
@@ -25,7 +25,8 @@ public class Magpie3
 	 * 
 	 * @param statement
 	 *            the user statement
-	 * @return a response based on the rules given
+	 * @return a response based on the rule
+s given
 	 */
 	public String getResponse(String statement)
 	{
@@ -38,6 +39,10 @@ public class Magpie3
 		{
 			response = "Why so negative?";
 		}
+		else if (findKeyword(statement, "brother") >= 0)
+                {
+                        response = "I wish I had a brother";
+                }
 		else if (findKeyword(statement, "mother") >= 0
 				|| findKeyword(statement, "father") >= 0
 				|| findKeyword(statement, "sister") >= 0
@@ -45,6 +50,23 @@ public class Magpie3
 		{
 			response = "Tell me more about your family.";
 		}
+		 else if(findKeyword(statement, "Mr. Collins") >= 0)
+                {
+                        response = "Sounds like a pretty chill guy.";
+                }
+                else if(findKeyword(statement, "party") >= 0)
+                {
+                        response = "Sounds nice.";
+                }
+                else if(findKeyword(statement, "ocean") >= 0)
+                {
+                        response = "I always loved the sea breeze.";
+                }
+                else if(findKeyword(statement, "death") >= 0)
+                {
+                        response = "Let's change the subject.";
+                }
+
 		else
 		{
 			response = getRandomResponse();
