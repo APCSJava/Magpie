@@ -1,1 +1,25 @@
 // Use this document to record your answer to the question found in the student guide, pg. 4
+
+Keyword:
+Animals
+Response:
+I like animals.
+
+Keyword:
+Games
+Response:
+Playing games are fun.
+
+Keyword:
+Drugs
+Response:
+Drugs are bad.
+
+
+When you inut a sentence with more than one keyword, the first keyword the code tests for is what it will respond to, regardless of if said
+keyword was first in the sentence. For example if the code tests for "mother" before "dog" then the output will respond to "mother"
+even if the sentence is "I like my dog and mother".
+
+
+Question:
+When a keyword is contained inside another word, the keyword will still be read as if it were on its own since
