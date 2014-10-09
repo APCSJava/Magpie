@@ -44,6 +44,20 @@ public class Magpie3
 				|| findKeyword(statement, "brother") >= 0)
 		{
 			response = "Tell me more about your family.";
+		} else if (findKeyword(statement, "dog") >= 0) {
+		  response = "Tell me more about your pets.";
+		} else if (findKeyword(statement, "cat") >= 0) {
+		  response = "Tell me more about your pets.";
+		} else if (findKeyword(statement, "Mr.") >= 0) {
+		  response = "He sounds liek a good teacher";
+		} else if (findKeyword(statement, "Mrs.") >= 0) {
+		  response = "She sounds like a good teacher";
+		} else if (findKeyword(statement, "food") >= 0) {
+		  response = "Ooh, that sounds yummy!";
+		} else if (findKeyword(statement, "travel") >= 0) {
+		  response = "Where are you going";
+		} else if (findKeyword(statement, "dream") >= 0) {
+		  response = "You should go after it!";
 		}
 		else
 		{

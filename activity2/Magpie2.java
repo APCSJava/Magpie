@@ -41,6 +41,23 @@ public class Magpie2
 				|| statement.indexOf("brother") >= 0)
 		{
 			response = "Tell me more about your family.";
+		} else if (statement.indexOf("dog") >= 0) {
+		  System.out.println("Tell me more about your pets.");
+		} else if (statement.indexOf("cat") >= 0) {
+ 		  System.out.println("Tell me more about your pets.");
+		}  else if (statement.indexOf("Mr.") >= 0 ) {
+		  System.out.println("He sounds like a good teacher.");
+		} else if (statement.indexOf("Mrs.") >= 0) {
+		  System.out.println("She sounds like a good teacher");
+		} else if (statement.trim().equals("")) {
+		  System.out.println("Say something, please.");
+		} else if (statement.indexOf("food") >= 0) {
+		  System.out.println("Ooh, that's sounds yummy!");    // This is the start of the three other
+								     // responses	
+		} else if (statement.indexOf("travel") >= 0) {
+		  System.out.println("Where are you going?");
+		} else if (statement.indexOf("dream") >= 0) {
+		  System.out.println("You should go after it!");
 		}
 		else
 		{
@@ -75,6 +92,10 @@ public class Magpie2
 		else if (whichResponse == 3)
 		{
 			response = "You don't say.";
+		} else if (whichResponse == 4) {
+		  response = "That's so cool!";
+		} else if (whichResponse == 5) {
+		  response = "Okay, I guess...";
 		}
 
 		return response;
