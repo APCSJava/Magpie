@@ -4,11 +4,9 @@
  * @author Laurie White
  * @version April 2012
  */
-public class StringExplorer
-{
+public class StringExplorer{
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args){
 		String sample = "The quick brown fox jumped over the lazy dog.";
 		
 		//  Demonstrate the indexOf method.
@@ -21,7 +19,7 @@ public class StringExplorer
 		System.out.println ("After toLowerCase(), sample = " + sample);
 		
 		//  Try other methods here:
-
-	}
-
+int notFoundPsn = sample.indexOf("slow");
+System.out.println("sample.indexOf(\"slow\") = " + notFoundPsn);
+}
 }
