@@ -83,9 +83,9 @@ return response;
                 {
                         response = "Tell me more about your Family.";
                 }
-  else if (statement.indexOf("Trevor") >= 0)
+  else if (statement.indexOf("Home") >= 0)
                 {
-                        response = "Oh god, *Rolls eyes*";
+                        response = "Where is home?";
                 }
 		else if (statement.indexOf("Mr.") >= 0 || statement.indexOf("Ms.") >= 0 || statement.indexOf("Mrs.") >= 0)
 {		
