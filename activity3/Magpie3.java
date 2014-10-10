@@ -45,6 +45,32 @@ public class Magpie3
 		{
 			response = "Tell me more about your family.";
 		}
+		else if (findKeyword(statement,"yes") >= 0)
+		{
+			response = "I like your positive thinking.";
+		}
+		else if (findKeyword(statement,"food") >= 0) 
+		{
+			response = "Food is good.";
+		}
+		else if (findKeyword(statement,"computer science") >= 0)
+		{
+			response = "Computer science is awesome!";
+		}
+		else if (findKeyword(statement,"dog") >= 0
+				|| findKeyword(statement,"cat") >= 0) 
+		{
+			response = "Tell me more about your pets.";
+		}
+		else if (findKeyword(statement,"mr. collins") >= 0) 
+		{
+			response = "I bet Mr. Collins is an awesome teacher.";
+		}
+		else if (findKeyword(statement,"rohan") >= 0 )
+		{
+			response = "I bet Rohan is a really awesome guy.";
+		}
+
 		else
 		{
 			response = getRandomResponse();
@@ -95,7 +121,7 @@ public class Magpie3
 						psn + goal.length(),
 						psn + goal.length() + 1)
 						.toLowerCase();
-			}
+			}		
 
 			// If before and after aren't letters, we've
 			// found the word
