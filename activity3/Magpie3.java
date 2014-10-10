@@ -31,7 +31,11 @@ s given
 	public String getResponse(String statement)
 	{
 		String response = "";
-		if (statement.length() == 0)
+		if(statement.trim().length()<1)
+                {
+                        response = "Please say something";
+                }
+		else if (statement.length() == 0)
 		{
 			response = "Say something, please.";
 		}
@@ -166,7 +170,7 @@ s given
 	 */
 	private String getRandomResponse()
 	{
-		final int NUMBER_OF_RESPONSES = 4;
+		final int NUMBER_OF_RESPONSES = 6;
 		double r = Math.random();
 		int whichResponse = (int) (r * NUMBER_OF_RESPONSES);
 		String response = "";
@@ -187,6 +191,14 @@ s given
 		{
 			response = "You don't say.";
 		}
+		else if (whichResponse == 4)
+                {
+                        response = "Sounds good.";
+                }
+		else if (whichResponse == 5)
+                {
+                        response = "Go on.";
+                }
 
 		return response;
 	}
