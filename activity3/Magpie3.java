@@ -170,7 +170,7 @@ s given
 	 */
 	private String getRandomResponse()
 	{
-		final int NUMBER_OF_RESPONSES = 6;
+		final int NUMBER_OF_RESPONSES = 7;
 		double r = Math.random();
 		int whichResponse = (int) (r * NUMBER_OF_RESPONSES);
 		String response = "";
@@ -199,7 +199,10 @@ s given
                 {
                         response = "Go on.";
                 }
-
+		else if (whichResponse == 6)
+                {
+                        response = "That's nice.";
+                }
 		return response;
 	}
 
