@@ -21,7 +21,12 @@ public class StringExplorer
 		System.out.println ("After toLowerCase(), sample = " + sample);
 		
 		//  Try other methods here:
-
+		int notFoundPsn = sample.indexOf("slow");
+		System.out.println("sample.indexOf(\"slow\") = " + notFoundPsn);
+		
+		String indexDemo = "Mr. Collins is a cool teacher.";
+		System.out.println("The index of cool is " + indexDemo.indexOf("cool"));
+		System.out.println("But the index of cool after the index 20 is " + indexDemo.indexOf("cool",20));
 	}
 
 }

@@ -39,7 +39,7 @@ public class Magpie2
 		{
 			response = "Why so negative?";
 		}
-		else if (statement.indexOf("yes" >= 0)
+		else if (statement.indexOf("yes") >= 0)
 		{
 			response = "I like your positive thinking.";
 		}
@@ -67,7 +67,7 @@ public class Magpie2
 		{
 			response = "I bet Mr. Collins is an awesome teacher.";
 		}
-		else if (statement.indexOf("rohan" >= 0) 
+		else if (statement.indexOf("rohan") >= 0 )
 		{
 			response = "I bet Rohan is a really awesome guy.";
 		}
@@ -107,11 +107,11 @@ public class Magpie2
 		}
 		else if (whichResponse == 4) 
 		{
-			response = "Ah yes, indeed."
+			response = "Ah yes, indeed.";
 		}
 		else if (whichResponse == 5)
 		{
-			response = "Fascinating."
+			response = "Fascinating.";
 		}
 
 		return response;
