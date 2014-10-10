@@ -30,24 +30,81 @@ public class Magpie2
 	 */
 	public String getResponse(String statement)
 	{
-		String response = "";
+statement = statement.trim();
+ String response = "";
+if(statement.length() <= 0){
+final int RESPONSES  = 3;
+                double ra = Math.random();
+                int which = (int)(ra * RESPONSES);
+                
+
+                if (which == 0)
+                {
+                        response = "Say something, please.";
+                }
+                else if (which == 1)
+                {
+                        response = "Is something wrong?";
+                }
+                else if (which == 2)
+                {
+                        response = "Lets talk";
+                }
+               
+
+
+return response;
+}
+	else{
+
+	
 		if (statement.indexOf("no") >= 0)
 		{
 			response = "Why so negative?";
 		}
-		else if (statement.indexOf("mother") >= 0
-				|| statement.indexOf("father") >= 0
-				|| statement.indexOf("sister") >= 0
-				|| statement.indexOf("brother") >= 0)
-		{
-			response = "Tell me more about your family.";
-		}
-		else
+
+  else if (statement.indexOf("cat") >= 0
+                                || statement.indexOf("dog") >= 0
+                                || statement.indexOf("bird") >= 0
+                                || statement.indexOf("fish") >= 0)
+                {
+                        response = "Tell me more about your pets.";
+                }
+
+  else if (statement.indexOf("Sick") >= 0)
+                {
+                        response = "Go see a doctor";
+                }
+
+  else if (statement.indexOf("Mother") >= 0
+                                || statement.indexOf("Father") >= 0
+                                || statement.indexOf("Bother") >= 0
+                                || statement.indexOf("Sister") >= 0)
+                {
+                        response = "Tell me more about your Family.";
+                }
+  else if (statement.indexOf("Trevor") >= 0)
+                {
+                        response = "Oh god, *Rolls eyes*";
+                }
+		else if (statement.indexOf("Mr.") >= 0 || statement.indexOf("Ms.") >= 0 || statement.indexOf("Mrs.") >= 0)
+{		
+if(statement.indexOf("Mr.") >= 0){
+response = "He sounds like a good teacher.";
+
+}
+
+else{
+response = "She sounds like a good teacher.";
+}
+
+}		else
 		{
 			response = getRandomResponse();
 		}
 		return response;
 	}
+}
 
 	/**
 	 * Pick a default response to use if nothing else fits.
@@ -66,7 +123,7 @@ public class Magpie2
 		}
 		else if (whichResponse == 1)
 		{
-			response = "Hmmm.";
+			response = "What is your name.";
 		}
 		else if (whichResponse == 2)
 		{
