@@ -3,8 +3,13 @@ Consider statements like “I know all the state capitals” and “I like veget
 Explain the problem with the responses to these statements. 
 
 Answer: 
-Since keywords are included in another word, the response generated is based off of what 
+Since a keyword is included in another word, the response generated is based off of what 
 should be the response when the key word is used alone. For example, for “I know all the state capitals”, 
-the response is, “Why so negative?”. If “no” was used by itself, the response is more likely to make sense. 
-However, this sentence is not negative. The method indexOf searches for if the word is included in the String statement, 
-however it does not check if the key word is surrounded by spaces, or other characters.  
+the response is, “Why so negative?”. This is the same response as if "no" was used as a word on its own.
+If “no” was used by itself, the response is more likely to make sense. 
+For example, "There are no good players on the hockey team".
+However, the state capitals sentence is not a negative sentence, and therefore the response does not make much sense.
+The method indexOf searches for if the word is included in the String statement, 
+however it does not check if the key word is surrounded by spaces, or other characters.
+Therefore, if the key word is included in a sentence, even as part of another word,
+the program will still print the response as it would be for the key word when used by itself. 
