@@ -6,7 +6,8 @@
  * </li></ul> 
  *    
  * @author Laurie White
- * @version April 2012
+ * @author Tristan Burke
+ * @version October 2014
  */
 public class Magpie3
 {
@@ -45,6 +46,22 @@ public class Magpie3
 		{
 			response = "Tell me more about your family.";
 		}
+                 else if (findKeyword(statement, "Mr. Collins") >= 0)
+                {
+                        response = "He sounds like a great teacher.";
+                }
+                else if (findKeyword(statement,"school") >= 0)
+                {
+                        response = "Tell me more about school";
+                }
+                else if (findKeyword(statement,"hah") >= 0)
+                {
+                        response = "Do you find that funny?";
+                }
+                else if (findKeyword(statement,"friend") >= 0)
+                {
+                        response = "What is your friend's name?";
+                }
 		else
 		{
 			response = getRandomResponse();
