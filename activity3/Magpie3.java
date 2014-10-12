@@ -1,4 +1,5 @@
-/**
+
+	/**
  * A program to carry on conversations with a human user.
  * This version: 
  * <ul><li>
@@ -8,8 +9,24 @@
  * @author Laurie White
  * @version April 2012
  */
+import java.util.Scanner;
 public class Magpie3
 {
+      public static void main(String[] args)
+	{
+		Magpie3 maggie = new Magpie3();
+		
+		System.out.println (maggie.getGreeting());
+		Scanner in = new Scanner (System.in);
+		String statement = in.nextLine();
+		
+		while (!statement.equals("Bye"))
+		{
+			System.out.println (maggie.getResponse(statement));
+			statement = in.nextLine();
+		}
+	}
+	
 	/**
 	 * Get a default greeting
 	 * 
@@ -20,37 +37,50 @@ public class Magpie3
 		return "Hello, let's talk.";
 	}
 
-	/**
-	 * Gives a response to a user statement
-	 * 
-	 * @param statement
-	 *            the user statement
-	 * @return a response based on the rules given
-	 */
-	public String getResponse(String statement)
-	{
-		String response = "";
-		if (statement.length() == 0)
-		{
-			response = "Say something, please.";
-		}
-		else if (findKeyword(statement, "no") >= 0)
-		{
-			response = "Why so negative?";
-		}
-		else if (findKeyword(statement, "mother") >= 0
-				|| findKeyword(statement, "father") >= 0
-				|| findKeyword(statement, "sister") >= 0
-				|| findKeyword(statement, "brother") >= 0)
-		{
-			response = "Tell me more about your family.";
-		}
-		else
-		{
-			response = getRandomResponse();
-		}
-		return response;
-	}
+	 /**
+   * Gives a response to a user statement
+   * 
+   * @param statement
+   *            the user statement
+   * @return a response based on the rules given
+   */
+  public String getResponse(String statement)
+  {
+    String response = "";
+    if (statement.indexOf("no") >= 0){
+      response = "Why so negative?";
+      
+    } else if (statement.indexOf("mother") >= 0
+                 || statement.indexOf("father") >= 0
+                 || statement.indexOf("sister") >= 0
+                 || statement.indexOf("brother") >= 0)
+    {
+      response = "Tell me more about your family.";
+      
+    } else if (statement.indexOf("dog") >= 0 || statement.indexOf("cat") >=  0) {
+      System.out.println ("Tell me more about your pets.");
+      
+    } else if (statement.indexOf("Mr.") >= 0) { 
+      System.out.println ("He seems like a good teacher.");
+      
+    } else if (statement.indexOf("Ms.") >=  0 || statement.indexOf("Mrs.") >=  0) {
+      System.out.println ("She seems like a good teacher.");
+      
+    }else if (statement.indexOf("school") >= 0) {
+      System.out.println("Tell me more about school?");
+    } else if (statement.indexOf("sleep") >= 0) {
+      System.out.println("How much sleep do you get?");
+    } else if (statement.indexOf("computer science") >= 0) {
+      System.out.println("Computer science is awesome!"); } 
+    else if (statement.indexOf("") >= 0) {
+      System.out.println ("Say something, please.");
+
+    } else {
+      
+      response = getRandomResponse();
+    }
+    return response;
+  }
 
 	/**
 	 * Search for one word in phrase. The search is not case
