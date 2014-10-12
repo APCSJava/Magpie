@@ -2,6 +2,7 @@
  * A program to allow students to try out different 
  * String methods. 
  * @author Laurie White
+*@austhor Rebecca Brunsberg 2014
  * @version April 2012
  */
 public class StringExplorer
@@ -20,8 +21,13 @@ public class StringExplorer
 		System.out.println ("sample.toLowerCase() = " + lowerCase);
 		System.out.println ("After toLowerCase(), sample = " + sample);
 		
-		//  Try other methods here:
+                //demonstrates what happens if substring not found
+		int notFoundPsn = sample.indexOf("slow");
+                System.out.println("sample.indexOf(\"slow\") = " + notFoundPsn);
 
+                //indexOf(String str, int fromIndex)
+                int fromIndex = sample.indexOf("brown", 12);
+                System.out.println("sample.indexOf brown = "+ fromIndex);
 	}
 
 }
