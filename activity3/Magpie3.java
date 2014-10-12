@@ -6,7 +6,8 @@
  * </li></ul> 
  *    
  * @author Laurie White
- * @version April 2012
+ * @author Rebecca Brunsberg
+ * @version October 2014
  */
 public class Magpie3
 {
