@@ -2,3 +2,7 @@
 football= What are your thoughts on Chelsea?
 Basketball= What is your favorite team in the NBA?
 fuck= Come on, no need to use that language
+
+When one keyword is nested with another a problem arises. With regards to the "My mother has a dog but no cat problem" the compiler will break when it goes through the first if statement check. So in this case the compiler will check first for the presence of "no" and when it finds it the compiler will stop checking for other things. 
+
+Again, if there is a word nested within another like "smothered" then another problem will arise. It will recognize the "mother" in "smothered" and print out the response for when the compiler recognizes mother.

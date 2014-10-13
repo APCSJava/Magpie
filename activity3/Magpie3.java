@@ -51,11 +51,11 @@ public class Magpie3
 		}
 		else if (findKeyword(statement, "mr") >=0 
 				|| findKeyword(statement, "mrs") >=0) {
-			if(findKeyword(statement, "mr")>=0) {
-				response = "He seems like a good teacher.";
+			if(findKeyword(statement, "mrs")>=0) {
+				response = "She seems like a good teacher.";
 			}
 			else {
-				response = "She seems like a good teacher.";
+				response = "He seems like a good teacher.";
 			}
 		}
 		else if (findKeyword(statement, "football") >=0
