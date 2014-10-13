@@ -53,6 +53,10 @@ public class Magpie4
 		{
 			response = transformIWantToStatement(statement);
 		}
+		else if (findKeyword(statement, "I want', 0) >= 0) 
+		{
+			response = transformIWantStatement(statement);
+		}
 
 		else
 		{
@@ -95,8 +99,21 @@ public class Magpie4
 		return "What would it mean to " + restOfStatement + "?";
 	}
 
-	
-	
+	//New method, to take on the IWant statements
+	private String transformIWantStatement(String statement) 
+	{
+	statement = statement.trim();
+		String lastChar = statement.substring(statement
+				.length() - 1);
+		if (lastChar.equals("."))
+		{
+			statement = statement.substring(0, statement
+					.length() - 1);
+		}	
+	int psn = findKeyword (statement, "I want ", 0);
+		String restOfStatement = statement.substring(psn + 7).trim();
+		return "Would you really be happy if you had " + restOfStatement + "?";
+	}
 	/**
 	 * Take a statement with "you <something> me" and transform it into 
 	 * "What makes you think that I <something> you?"
