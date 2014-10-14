@@ -1,1 +1,3 @@
 // Use this document to record your answer to the question found in the student guide, pg. 4
+1.	In general, keywords are handled in order of occurrence in the if-then sequence. In this example, mother will take precedence over dog and cat because the else if statement that handles mother precedes the else if statement that handles dog and cat.
+2.	The problem is that the code is just detecting the letters “no” in a sequence but not detecting that they are their own word. So, it will pick up “no” in “know.” 
