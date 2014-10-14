@@ -6,7 +6,8 @@
  * </li></ul> 
  *    
  * @author Laurie White
- * @version April 2012
+ * @author Jordi Albanell
+ * @version October 2014
  */
 public class Magpie3
 {
@@ -53,10 +54,6 @@ public class Magpie3
       
     } else if (findKeyword(statement,"Ms.") >= 0 || findKeyword(statement,"Mrs.") >= 0) {
       System.out.println ("She seems like a good teacher");
-      
-    } else if (findKeyword(statement,"") >= 0) {
-      System.out.println ("Say something, please");
-      
       
     } else {
       response = getRandomResponse();
