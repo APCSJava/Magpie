@@ -57,7 +57,6 @@ public class Magpie4
   {
    response = transformIWantStatement(statement);
   }
-
   else
   {
    // Look for a two word (you <something> me)
