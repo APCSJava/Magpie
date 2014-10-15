@@ -7,6 +7,7 @@
  *   Will transform statements as well as react to keywords
  *</li></ul>
  * @author Stefan 26Cubies Chao
+ * @Duncan (kind of)
  * @version October 15
  *
  */
