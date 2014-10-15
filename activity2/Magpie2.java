@@ -12,7 +12,7 @@
  */
 public class Magpie2
 {
- /**
+/**
   * Get a default greeting  
   * @return a greeting
   */
@@ -65,7 +65,6 @@ public class Magpie2
   double r = Math.random();
   int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
   String response = "";
-  
   if (whichResponse == 0)
   {
    response = "Interesting, tell me more.";
