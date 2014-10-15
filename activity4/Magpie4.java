@@ -7,7 +7,8 @@
  * 		Will transform statements as well as react to keywords
  *</li></ul>
  * @author Laurie White
- * @version April 2012
+ * @Duncan Khosla, Stefan Chao
+ * @version October 2014
  *
  */
 public class Magpie4
@@ -53,23 +54,32 @@ public class Magpie4
 		{
 			response = transformIWantToStatement(statement);
 		}
-
-		else
-		{
+		else if (findKeyword(statement, "I want", 0) >= 0)
+                {
+                        response = transformIWant(statement);
+                }
+		
 			// Look for a two word (you <something> me)
 			// pattern
-			int psn = findKeyword(statement, "you", 0);
+		else if(findKeyword(statement, "I", 0)>= 0&&findKeyword(statement, "You",0)>=0)
+		{
+			response = transformIYouStatement(statement);
+		}
+		else if(findKeyword(statement, "You", 0)>= 0&&findKeyword(statement, "Me",0)>=0)
+                {
+                        response = transformYouMeStatement(statement);
+                }
 
-			if (psn >= 0
-					&& findKeyword(statement, "me", psn) >= 0)
-			{
-				response = transformYouMeStatement(statement);
-			}
+			
+				
+			
+
+	
 			else
 			{
 				response = getRandomResponse();
 			}
-		}
+		
 		return response;
 	}
 	
@@ -94,6 +104,40 @@ public class Magpie4
 		String restOfStatement = statement.substring(psn + 9).trim();
 		return "What would it mean to " + restOfStatement + "?";
 	}
+	 private String transformIYouStatement(String statement)
+        {
+                //  Remove the final period, if there is one
+                statement = statement.trim();
+                String lastChar = statement.substring(statement
+                                .length() - 1);
+                if (lastChar.equals("."))
+                {
+                        statement = statement.substring(0, statement
+                                        .length() - 1);
+                }
+
+                int psnOfI = findKeyword (statement, "I", 0);
+                int psnOfYou = findKeyword (statement, "you", psnOfI + 1);
+
+                String restOfStatement = statement.substring(psnOfI + 1, psnOfYou).trim();
+                return "Why do you " + restOfStatement + " me?";
+        }
+
+	private String transformIWant(String statement)
+        {
+                //  Remove the final period, if there is one
+                statement = statement.trim();
+                String lastChar = statement.substring(statement
+                                .length() - 1);
+                if (lastChar.equals("."))
+                {
+                        statement = statement.substring(0, statement
+                                        .length() - 1);
+                }
+                int psn = findKeyword (statement, "I want ", 0);
+                String restOfStatement = statement.substring(psn + 7).trim();
+                return "Would you really be happy if you had " + restOfStatement + "?";
+        }
 
 	
 	
