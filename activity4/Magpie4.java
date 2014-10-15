@@ -10,7 +10,7 @@
  * @version April 2012
  *
  */
-package activity4;
+//package activity4;
 
 public class Magpie4 {
 	/**
