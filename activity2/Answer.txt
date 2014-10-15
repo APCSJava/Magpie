@@ -1,1 +1,2 @@
 // Use this document to record your answer to the question found in the student guide, pg. 4
+The problem when a keyword is included in another word is that you don't know whether the user actually meant that keyword. For example, Chris was talking about how when he enters "I know" the program might respond "Why so negative?" or something like that, because the word "know" contains "no". Obviously, Chris did not mean to say "no", but the program interpreted it that way, resulting in it responding in an incorrect way.
