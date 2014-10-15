@@ -1,0 +1,4 @@
+// Use this document to record your answer to the question found in the student guide, pg. 
+4
+
+The Magpie will respond as if the keyword contained within another word is not contained, i.e. “I know” will get the reply “Why so negative?” This is a result of the indexOf method that finds all occurrences of the string, regardless if the string is a separate word or not.
