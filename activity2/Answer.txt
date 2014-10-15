@@ -1,7 +1,0 @@
-// Use this document to record your answer to the question found in the student guide, pg. 4
-When a keyword is imbedded into another word, Magpie will print the response with the keyword 
-in it. The issue with this response is that the statement word which contains the keyword may 
-not hold the same meaning as the keyword itself. For example, "smothered" has no relation to 
-"mother". The problem itself stems from the .indexOf(string keyword) process for identifying
-the keyword in the statement. This process scanns only the statement itself and finds the 
-instance of the keyword in the statement, regardless of the relative location of the keyword.
