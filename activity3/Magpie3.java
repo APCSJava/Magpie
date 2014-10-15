@@ -27,9 +27,9 @@ public class Magpie3
 	 *            the user statement
 	 * @return a response based on the rules given
 	 */
-	public String getResponse(String statement)
-	{
+	public String getResponse(String statement) {
 		String response = "";
+		
 		if (statement.length() == 0) {
 			response = "Say something, please.";
 		}
@@ -83,29 +83,25 @@ public class Magpie3
 	 * @return the index of the first occurrence of goal in
 	 *         statement or -1 if it's not found
 	 */
-	private int findKeyword(String statement, String goal,
-			int startPos)
-	{
+	private int findKeyword(String statement, String goal, int startPos) {
+		
 		String phrase = statement.trim();
 		// The only change to incorporate the startPos is in
 		// the line below
-		int psn = phrase.toLowerCase().indexOf(
-				goal.toLowerCase(), startPos);
+		int psn = phrase.toLowerCase().indexOf(goal.toLowerCase(), startPos);
 
 		// Refinement--make sure the goal isn't part of a
 		// word
-		while (psn >= 0)
-		{
+		while (psn >= 0) {
 			// Find the string of length 1 before and after
 			// the word
 			String before = " ", after = " ";
-			if (psn > 0)
-			{
-				before = phrase.substring(psn - 1, psn)
-						.toLowerCase();
+			
+			if (psn > 0) {
+				before = phrase.substring(psn - 1, psn).toLowerCase();
 			}
-			if (psn + goal.length() < phrase.length())
-			{
+			
+			if (psn + goal.length() < phrase.length()) {
 				after = phrase.substring(
 						psn + goal.length(),
 						psn + goal.length() + 1)
@@ -125,11 +121,8 @@ public class Magpie3
 
 			// The last position didn't work, so let's find
 			// the next, if there is one.
-			psn = phrase.indexOf(goal.toLowerCase(),
-					psn + 1);
-
+			psn = phrase.indexOf(goal.toLowerCase(), psn + 1);
 		}
-
 		return -1;
 	}
 
@@ -147,8 +140,7 @@ public class Magpie3
 	 * @return the index of the first occurrence of goal in
 	 *         statement or -1 if it's not found
 	 */
-	private int findKeyword(String statement, String goal)
-	{
+	private int findKeyword(String statement, String goal) {
 		return findKeyword(statement, goal, 0);
 	}
 
@@ -157,31 +149,29 @@ public class Magpie3
 	 * 
 	 * @return a non-committal string
 	 */
-	private String getRandomResponse()
-	{
+	private String getRandomResponse() {
 		final int NUMBER_OF_RESPONSES = 4;
 		double r = Math.random();
 		int whichResponse = (int) (r * NUMBER_OF_RESPONSES);
+		
 		String response = "";
 
-		if (whichResponse == 0)
-		{
+		if (whichResponse == 0) {
 			response = "Interesting, tell me more.";
 		}
-		else if (whichResponse == 1)
-		{
+		
+		else if (whichResponse == 1) {
 			response = "Hmmm.";
 		}
-		else if (whichResponse == 2)
-		{
+		
+		else if (whichResponse == 2) {
 			response = "Do you really think so?";
 		}
-		else if (whichResponse == 3)
-		{
+		
+		else if (whichResponse == 3) {
 			response = "You don't say.";
 		}
-
+		
 		return response;
 	}
-
 }
