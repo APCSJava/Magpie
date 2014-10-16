@@ -9,7 +9,7 @@
  * @author Jordi Albanell
  * @version October 2014
  */
-public class Magpie4
+public class Magpie3
 {
   /**
    * Get a default greeting
@@ -55,13 +55,8 @@ public class Magpie4
     } else if (findKeyword(statement,"Ms.") >= 0 || findKeyword(statement,"Mrs.") >= 0) {
       System.out.println ("She seems like a good teacher");
       
-    } else if (statement.length() > 6 && statement.substring(0, 6).equals("I want")) {
-      System.out.println ("Would you really be happy if you had" + statement.substring(6, statement.length()) + "?");
-      
-    } else if (statement.length() > 6 && 
-               statement.substring(0, 2).equals("I ") &&
-               statement.substring(statement.length() - 3, statement.length()).equals("you")) {
-      System.out.println ("Why do you" + statement.substring(1, statement.length() - 3) + "me?");
+    } else if (statement.substring(0, 6) = "I want to") {
+      System.out.println ("Would you really be happy if you had " + statement.substring(6, statement.length()));
       
     } else {
       response = getRandomResponse();
