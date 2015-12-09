@@ -6,7 +6,7 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 /**
  * The client-side stub for the RPC service.
  */
-@RemoteServiceRelativePath("greet")
+@RemoteServiceRelativePath("respond")
 public interface MagpieService extends RemoteService {
-	String getResponse(String name) throws IllegalArgumentException;
+	String getResponse(String name);
 }

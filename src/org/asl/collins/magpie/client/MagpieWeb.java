@@ -1,13 +1,13 @@
 package org.asl.collins.magpie.client;
 
-import org.asl.collins.magpie.server.Magpie;
-
 import com.google.gwt.core.client.EntryPoint;
+import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.KeyCodes;
 import com.google.gwt.event.dom.client.KeyUpEvent;
 import com.google.gwt.event.dom.client.KeyUpHandler;
+import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootPanel;
@@ -17,6 +17,8 @@ import com.google.gwt.user.client.ui.TextBox;
  * Entry point classes define <code>onModuleLoad()</code>.
  */
 public class MagpieWeb implements EntryPoint {
+
+	private MagpieServiceAsync asyncMagpie = GWT.create(MagpieService.class);
 
 	public void onModuleLoad() {
 		final TextBox inputText = new TextBox();
@@ -57,10 +59,23 @@ public class MagpieWeb implements EntryPoint {
 			 * Send the text to the server and wait for a response.
 			 */
 			private void getMagpieResponse() {
-				magpieResponse.setText("D'oh");
-				inputText.setText("");
-				inputText.setFocus(true);
-				inputText.selectAll();
+				if (asyncMagpie == null) {
+					asyncMagpie = GWT.create(MagpieService.class);
+				}
+				AsyncCallback<String> callback = new AsyncCallback<String>() {
+					public void onFailure(Throwable caught) {
+						magpieResponse.setText("Houston, we have an error.");
+					}
+
+					@Override
+					public void onSuccess(String result) {
+						magpieResponse.setText(result);
+						inputText.setText("");
+						inputText.setFocus(true);
+						inputText.selectAll();
+					}
+				};
+				asyncMagpie.getResponse(inputText.getText(), callback);
 			}
 		}
 
