@@ -1,7 +1,8 @@
 package org.asl.collins.magpie.client;
 
+import org.asl.collins.magpie.server.Magpie;
+
 import com.google.gwt.core.client.EntryPoint;
-import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.KeyCodes;
@@ -18,15 +19,12 @@ import com.google.gwt.user.client.ui.TextBox;
 public class MagpieWeb implements EntryPoint {
 
 	public void onModuleLoad() {
-		final Magpie maggie = new Magpie();
-		
-
 		final TextBox inputText = new TextBox();
 		inputText.setText("Type here to chat...");
 		inputText.setVisibleLength(60);
 		final Button sendButton = new Button("Send");
 		final Label magpieResponse = new Label();
-		magpieResponse.setText(maggie.getGreeting());
+		magpieResponse.setText("Magpie is waking up ... try saying something");
 
 		// Add user interface elements to the RootPanel
 		RootPanel.get("magpieResponseContainer").add(magpieResponse);
@@ -59,7 +57,7 @@ public class MagpieWeb implements EntryPoint {
 			 * Send the text to the server and wait for a response.
 			 */
 			private void getMagpieResponse() {
-				magpieResponse.setText(maggie.getResponse(inputText.getText()));
+				magpieResponse.setText("D'oh");
 				inputText.setText("");
 				inputText.setFocus(true);
 				inputText.selectAll();

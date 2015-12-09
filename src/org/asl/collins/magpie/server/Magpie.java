@@ -1,4 +1,4 @@
-package org.asl.collins.magpie.client;
+package org.asl.collins.magpie.server;
 /**
  * A program to carry on conversations with a human user.
  * This is the initial version that:  
@@ -17,9 +17,9 @@ public class Magpie
 	 * Get a default greeting 	
 	 * @return a greeting
 	 */
-	public String getGreeting()
+	public static String getGreeting()
 	{
-		return "Hello, let's chat.";
+		return "I'm a magpie. Let's chat.";
 	}
 	
 	/**
@@ -29,7 +29,7 @@ public class Magpie
 	 *            the user statement
 	 * @return a response based on the rules given
 	 */
-	public String getResponse(String statement)
+	public static String getResponse(String statement)
 	{
 		String response = "";
 		if (statement.toLowerCase().indexOf("maggie")>=0) {
@@ -57,7 +57,7 @@ public class Magpie
 	 * Pick a default response to use if nothing else fits.
 	 * @return a non-committal string
 	 */
-	private String getRandomResponse()
+	private static String getRandomResponse()
 	{
 		final int NUMBER_OF_RESPONSES = 4;
 		double r = Math.random();

@@ -1,6 +1,6 @@
 package org.asl.collins.magpie.server;
 
-import org.asl.collins.magpie.client.GreetingService;
+import org.asl.collins.magpie.client.MagpieService;
 import org.asl.collins.magpie.shared.FieldVerifier;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
@@ -8,9 +8,9 @@ import com.google.gwt.user.server.rpc.RemoteServiceServlet;
  * The server-side implementation of the RPC service.
  */
 @SuppressWarnings("serial")
-public class GreetingServiceImpl extends RemoteServiceServlet implements GreetingService {
+public class MagpieServiceImpl extends RemoteServiceServlet implements MagpieService {
 
-	public String greetServer(String input) throws IllegalArgumentException {
+	public String getResponse(String input) throws IllegalArgumentException {
 		// Verify that the input is valid. 
 		if (!FieldVerifier.isValidName(input)) {
 			// If the input is not valid, throw an IllegalArgumentException back to
