@@ -9,4 +9,4 @@ Starter code for each activity (if required) is located in a separate folder:
 * activity3 Using methods of the String class
 * activity4 Transforming String statements
 * activity5 Extension: randomizing responses
-
+changed
